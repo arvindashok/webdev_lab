@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body{
+            text-align: center;
+            background-color:aliceblue;
+            background-image: url("signin.gif");
+            border-image-repeat: 1;
+            margin: auto;
+            padding: auto;
+
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        forms{
+            border: 5px;
+            outline: none;
+            background: transparent;
+            color: aliceblue;
+        }
+        .f{
+            outline: none;
+            background: transparent;
+            border-top: 1px;
+            border-left: 1px;
+            border-right:1px ;
+            padding: 3px;
+            color: aliceblue;
+        }
+        for{
+            outline: none;
+            background: transparent;
+            border-top: 1px;
+            border-left: 1px;
+            border-right:1px ;
+            padding: 3px; 
+        }
+        h1{
+            color: aliceblue;
+        }
+        input{
+            color: aliceblues;
+        }
+        .back{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1> Register here</h1>
+    <forms class="for" action="signup.php" method="post">
+        Name
+        <input type="text" name="name" id="name" placeholder="Enter your name" class="f"><br><br>
+        Gmail
+        <input type="text" gmail="my_number" id="gmail" placeholder="Enter your gmail"class="f" name="gmail"><br><br>
+        Password
+        <input type="password" password="my password" id="password" name="password" placeholder="Enter Password" class="f"required /><br><br>
+        Confirm Password
+        <input type="password" password="my password" id="password" name="confirmpassword" placeholder="Confirm your Password" class="f"required /><br><br>
+        <h3>Demographic information</h3> 
+        Address<br>
+        Street
+        <input type="text" street="Mystreet" id="Street" name="street" placeholder="Enter your Street name"class="f"><br><br>
+        Area
+        <input type="text" Area="Myarea" id="Street" name="area" placeholder="Enter your Area name"class="f"><br><br>
+        Landmark
+        <input type="text" Landmark="Mylandmark" id="Landmark" name="landmark" placeholder="Enter your Landmark"class="f"><br><br>
+        Pincode
+        <input type="text" pincode="Mypincode" id="Pincode" name="pincode" placeholder="Enter your Pincode"class="f"><br><br>
+        City
+        <input type="text" city="Mycity" id="City" name="city" placeholder="Enter your city name"class="f"><br><br>
+        State
+        <input type="text" state="Mystate" id="State" name="state" placeholder="Enter your State name"class="f"><br><br>
+        <h3>Personal  Information</h3>
+        Date Of Birth
+        <input type="date" date="Mydate" id="date" name="date" placeholder="Enter your date of birth"class="f"><br><br>
+        Phone Number
+        <input type="tel" number="Mynumber" id="phone" name="number" placeholder="Enter your Phone number"class="f"><br><br>
+        <input type="submit" class="btn btn-primary"> <br><br>
+        <a class="back" href="index.html">Back</a>
+
+    </forms>
+</body>
+</html>
