@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: aliceblue;
+            background-image: url("signin.gif");
+            border-image-repeat: 1;
+            margin: auto;
+            padding: auto;
+
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        forms {
+            border: 5px;
+            outline: none;
+            background: transparent;
+            color: aliceblue;
+        }
+
+        .f {
+            outline: none;
+            background: transparent;
+            border-top: 1px;
+            border-left: 1px;
+            border-right: 1px;
+            padding: 3px;
+            color: aliceblue;
+        }
+
+        for {
+            outline: none;
+            background: transparent;
+            border-top: 1px;
+            border-left: 1px;
+            border-right: 1px;
+            padding: 3px;
+        }
+
+        h1 {
+            color: aliceblue;
+        }
+
+        input {
+            color: aliceblues;
+        }
+
+        .back {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Register here</h1>
+    <form class="for" action="./signup1.php" method="post">
+        Name
+        <input type="text" name="name" id="name" placeholder="Enter your name" class="f"><br><br>
+        Gmail
+        <input type="text" gmail="my_number" id="gmail" placeholder="Enter your gmail" class="f"
+            name="gmail"></span><br><br>
+        Password
+        <input type="password" password="my password" id="password" name="password" placeholder="Enter Password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            class="f" required /><span style="color: red;" id=_password></span><br><br>
+        Confirm Password
+        <input type="password" password="my password" id="confirmpassword" name="confirmpassword"
+            placeholder="Confirm your Password" class="f" required /><span style="color: red;"
+            id=_confirmpassword></span><br><br>
+        <h3>Demographic information</h3>
+        Address<br>
+        Street
+        <input type="text" street="Mystreet" id="street" name="street" placeholder="Enter your Street name"
+            class="f"><br><br>
+        Area
+        <input type="text" Area="Myarea" id="area" name="area" placeholder="Enter your Area name" class="f"><br><br>
+        Landmark
+        <input type="text" Landmark="Mylandmark" id="landmark" name="landmark" placeholder="Enter your Landmark"
+            class="f"><br><br>
+        Pincode
+        <input type="text" pincode="Mypincode" id="pincode" name="pincode" placeholder="Enter your Pincode"
+            class="f"><br><br>
+        City
+        <input type="text" city="Mycity" id="city" name="city" placeholder="Enter your city name" class="f"><br><br>
+        State
+        <input type="text" state="Mystate" id="state" name="state" placeholder="Enter your State name"
+            class="f"><br><br>
+        <h3>Personal Information</h3>
+        Date Of Birth
+        <input type="date" date="Mydate" id="date" name="date" placeholder="Enter your date of birth" class="f"><br><br>
+        Phone Number
+        <input type="tel" number="Mynumber" id="phone" name="number" placeholder="Enter your Phone number"
+            class="f"><br><br>
+        <input type="submit"  onclick="alert('HI');" name="Submit" class="btn btn-primary" /><span style="color: red;" id="incomplete"></span> <br><br>
+        <a class="back" href="index.html">Back</a>
+
+    </form>
+    <script>
+        function verify() {
+            let name = document.getElementById("name");
+            let gmail = document.getElementById("gmail");
+            let p = document.getElementById("password");
+            let cp = document.getElementById("confirmpassword");
+            let street = document.getElementById("street");
+            let area = document.getElementById("area");
+            let landmark = document.getElementById("landmark");
+            let pincode = document.getElementById("pincode");
+            let city = document.getElementById("city");
+            let state = document.getElementById("state");
+            let dob = document.getElementById("date");
+            let phone = document.getElementById("phone");
+            let lcl = /[a-z]/g;
+            let ucl = /[A-Z]/g;
+            let dig = /[0-9]/g;
+            if (p.value == "" || name.value == "" || gmail.value == "" || street.value == "" || area.value == "" ||landmark.value==""|| pincode == "" || city.value == "" || state.value == "" || dob.value == "" || phone == "") {
+                document.getElementById("incomplete").innerHTML = "*Please fill all fields";
+            } else if (!p.value.match(lcl)) {
+                document.getElementById("incomplete").innerHTML = null;
+                document.getElementById("_password").innerHTML = "*Password must contain atleast 1 lowercase letter";
+            } else if (!p.value.match(ucl)) {
+                document.getElementById("incomplete").innerHTML = null;
+                document.getElementById("_password").innerHTML = "*Password must contain atleast 1 uppercase letter";
+            } else if (!p.value.match(dig)) {
+                document.getElementById("incomplete").innerHTML = null;
+                document.getElementById("_password").innerHTML = "*Password must contain atleast 1 digit";
+            } else if (p.value.length < 10) {
+                document.getElementById("incomplete").innerHTML = null;
+                document.getElementById("_password").innerHTML = "*Password must be atleast 10 characters";
+            } else if (p.value != cp.value) {
+                document.getElementById("incomplete").innerHTML = null;
+                document.getElementById("_password").innerHTML = null;
+                document.getElementById("_confirmpassword").innerHTML = "*Passwords don't match";
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
